@@ -6,7 +6,7 @@ const app = express()
 mongoose.connect('mongodb://localhost/creatureDB', function() {console.log("Connected")})
 app.listen(8080)
 
-let creatureApi = require("./creatureApi.js")
+let creatureApi = require("./Apis/creatureApi.js")
 
 app.use(express.static("node_modules"))
 app.use(express.static("public"))

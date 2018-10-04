@@ -5,6 +5,12 @@ class Controller{
         this.$creatures = $('.creatures')
     }
 
+    onLoad(){
+        this.data.getCreatures().then(()=>{
+            this.renderer.render(this.data.creatures)
+        })
+    }
+
     compilePostCreature(){
         $("#addcreature").on("click",(event)=>{
         let name = $(event.currentTarget).closest(".post-form").find("#creatureName").val()

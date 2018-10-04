@@ -1,6 +1,13 @@
 const express = require('express');
 const router = express.Router()
-const Creature = require("./creatureModel.js")
+const Creature = require("../Models/creatureModel.js")
+
+router.get("",(req,res)=>{
+    Creature.find().exec((err,creatures)=>{
+        if(err){res.status(500).send(err)}
+        res.send(creatures)
+    })
+})
 
 router.post("/:name/:creatureType",(req,res)=>{
     let name = req.params.name

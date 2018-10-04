@@ -6,4 +6,6 @@ let data = new Data()
 let renderer = new Renderer
 let controller = new Controller(data,renderer)
 
+
+controller.onLoad()
 controller.compilePostCreature()
